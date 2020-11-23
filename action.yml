@@ -1,4 +1,4 @@
-name: 'Firebase App Distribution'
+name: 'Firebase App Distribution Action'
 description: 'Distributes your artifacts to testers.'
 author: 'hasretsariyer@gmail.com'
 inputs: 

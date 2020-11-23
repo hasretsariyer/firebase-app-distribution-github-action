@@ -24,13 +24,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Download sample input apk file
-        run: wget https://github.com/hasretsariyer/GithubRepoList/blob/main/apks/app-release.apk
       - name: Firebase App Distribution Action
         uses: hasretsariyer/firebase-app-distribution-github-action@main
         with:
           app_id: ${{secrets.FIREBASE_APP_ID}}
           firebase_token: ${{secrets.FIREBASE_TOKEN}}
-          app_file: app-release.apk
+          app_file: app-release-ac-signed.apk
           tester_groups: maintainers
 

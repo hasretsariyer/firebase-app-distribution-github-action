@@ -19,6 +19,9 @@ inputs:
   release_notes:
     description: 'Release notes for this build.'
     required: false
+branding:
+  icon: "send"
+  color: "yellow"
 runs:
   using: 'docker'
   image: 'Dockerfile'

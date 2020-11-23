@@ -1,0 +1,24 @@
+name: 'Firebase App Distribution'
+description: 'Distributes your artifacts to testers.'
+author: 'hasretsariyer@gmail.com'
+inputs: 
+  app_id:
+    description: 'Firebase App ID. You can find it in the Firebase console, on the General Settings page.'
+    required: true 
+  app_file:
+    description: 'Path of IPA or APK file to distribution.'
+    required: true
+  firebase_token:
+    description: | 
+      'Firebase access token. You can create it by `firebase login:ci` on your local machine.
+       Visit [cli-ci-systems](https://firebase.google.com/docs/cli#cli-ci-systems) for more detail'
+    required: true 
+  tester_groups:
+    description: 'Distribution groups'
+    required: false
+  release_notes:
+    description: 'Release notes for this build.'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

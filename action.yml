@@ -1,5 +1,5 @@
 name: 'Firebase App Distribution Action'
-description: 'Distributes your artifacts to testers.'
+description: 'Distributes IPA or APK to testers.'
 author: 'hasretsariyer@gmail.com'
 inputs: 
   app_id:

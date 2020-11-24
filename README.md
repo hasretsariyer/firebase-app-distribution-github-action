@@ -27,3 +27,26 @@ Distribution groups. You can specify the groups as a comma-separated list: `andr
 
 Release notes for this build. If not specified, the action will add commit short hash and commit message.
 Sample: `a6e6c41 Edit yaml file`
+
+## Sample Usage 
+
+    - name: CI
+    on:
+      push:
+        branches: [ main ]
+      pull_request:
+        branches: [ main ]
+
+      workflow_dispatch:
+
+    jobs:
+      build:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Firebase App Distribution
+            uses: hasretsariyer/firebase-app-distribution-github-action@v1
+            with:
+              app_id: ${{secrets.FIREBASE_APP_ID}}
+              firebase_token: ${{secrets.FIREBASE_TOKEN}}
+              app_file: app-release.apk
+              tester_groups: maintainers

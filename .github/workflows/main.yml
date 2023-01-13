@@ -11,13 +11,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Firebase App Distribution Action
-        uses: ./
+      - name: Firebase App Distribution
+        uses: hasretsariyer/firebase-app-distribution-github-action@v1
         with:
           app_id: ${{secrets.FIREBASE_APP_ID}}
           firebase_token: ${{secrets.FIREBASE_TOKEN}}
-          app_file: app-release-ac-signed.apk
+          app_file: app-release.apk
           tester_groups: maintainers
 
